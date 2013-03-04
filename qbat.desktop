@@ -1,0 +1,11 @@
+[Desktop Entry]
+Categories=System;
+DocPath=
+Encoding=UTF-8
+Exec=qbat
+GenericName=Qt Battery Monitor
+Icon=/usr/share/qbat/icons/qbat.png
+MimeType=
+Name=QBat
+Terminal=false
+Type=Application

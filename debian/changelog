@@ -1,0 +1,109 @@
+qbat (0.2.2) unstable; urgency=low
+
+  * fixed battery loss information
+  * settings are now saved by accepting the settings dialog
+
+ -- Oliver Groß <neokensuke@freenet.de>  Mon, 20 Jul 2009 14:11:05 +0200
+
+qbat (0.2.1) unstable; urgency=low
+
+  * .desktop file fixes
+  * added dis-/charging color settings
+  * left click on (battery-)icon shows current information
+  * added capacity loss information
+
+ -- Oliver Groß <neokensuke@freenet.de>  Wed, 15 Jul 2009 12:15:50 +0200
+
+qbat (0.2.0) unstable; urgency=low
+
+  * split timers (for lower CPU usage):
+    - check for power supplies
+    - retrieve power supply data
+  * new icons
+  * code cleanup
+  * internal redesign
+  * german translation
+
+ -- Oliver Groß <neokensuke@freenet.de>  Thu, 18 Jun 2009 13:08:41 +0200
+
+qbat (0.1.8) unstable; urgency=low
+
+  * code cleanup
+  * display current rate in watt and ampere
+  * fixed repeated critical event handling
+  * workaround for delayed update of battery icon colors
+
+ -- Oliver Groß <neokensuke@freenet.de>  Tue, 07 Oct 2008 16:03:45 +0200
+
+qbat (0.1.7) unstable; urgency=low
+
+  * fixed "command<->waring" setting
+  * fixed sysfs filenames
+  * fixed lintian copyright warning
+
+ -- Oliver Groß <neokensuke@freenet.de>  Tue, 02 Sep 2008 22:11:25 +0200
+
+qbat (0.1.6) unstable; urgency=low
+
+  * added basic support for battery stats in mWh
+  * added confirmation dialog before executing command
+    (with optional timeout)
+  * added gentoo ebuild
+  * fixed setting command
+
+ -- Oliver Groß <neokensuke@freenet.de>  Tue, 02 Sep 2008 20:21:16 +0200
+
+qbat (0.1.5) unstable; urgency=low
+
+  * added option to display balloon tips instead of dialog messages
+  * added charging time information
+  * removed obsolete d-bus dependecy
+  * fixed .desktop file
+  * some Qt 4.4.x fixes
+
+ -- Oliver Groß <neokensuke@freenet.de>  Mon, 02 Jun 2008 15:52:59 +0200
+
+qbat (0.1.4) unstable; urgency=low
+
+  * Fixed and improved battery icon painting
+  * Added caching of information
+
+ -- Oliver Groß <neokensuke@freenet.de>  Thu, 17 Apr 2008 14:13:30 +0200
+
+qbat (0.1.3) unstable; urgency=low
+
+  * Small fixes
+  * Added man page
+
+ -- Oliver Groß <neokensuke@freenet.de>  Thu, 10 Jan 2008 14:57:54 +0100
+
+qbat (0.1.2) unstable; urgency=low
+
+  * Battery painting bugfix
+
+ -- Oliver Groß <neokensuke@freenet.de>  Thu, 10 Jan 2008 14:34:25 +0100
+
+qbat (0.1.1) unstable; urgency=low
+
+  * Several bugfixes
+  * Renewed battery painting
+
+ -- Oliver Groß <neokensuke@freenet.de>  Thu, 10 Jan 2008 14:09:38 +0100
+
+qbat (0.1.0) unstable; urgency=low
+
+  * New icon for batterys
+  * Added handling for critical battery capacity
+    - Show warning or execute a command
+  * Added settings dialog
+  * Added customizable battery icon colors
+  * Added customizable polling rate
+  * Batterys can now be merged to one virtual battery
+
+ -- Oliver Groß <neokensuke@freenet.de>  Wed, 09 Jan 2008 16:58:07 +0100
+
+qbat (0.0.1) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Oliver Groß <neokensuke@freenet.de>  Tue, 08 Jan 2008 11:31:31 +0100
