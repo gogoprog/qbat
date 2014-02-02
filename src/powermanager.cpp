@@ -125,7 +125,7 @@ namespace qbat {
 			foreach(QString i, powerSupplies) {
 				// this is possibly not very reliable
 				if (CBatteryIcon::sysfsDir.exists(i + "/online")) {
-					if (readIntSysFile(CBatteryIcon::sysfsDir.filePath(i + "/online").toAscii().constData()) == 1) {
+					if (readIntSysFile(CBatteryIcon::sysfsDir.filePath(i + "/online").toLatin1().constData()) == 1) {
 						m_ACPlug = true;
 						m_CriticalHandled = false;
 					}
@@ -135,7 +135,7 @@ namespace qbat {
 						currentBatteryIcon = m_BatteryIcons.take(i);
 					}
 					else {
-// 						qDebug("new battery: %s", i.toAscii().constData());
+// 						qDebug("new battery: %s", i.toLatin1().constData());
 						currentBatteryIcon = new CBatteryIcon(&m_Settings, i, this);
 						currentBatteryIcon->setContextMenu(&m_ContextMenu);
 						currentBatteryIcon->updateData();

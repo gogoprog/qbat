@@ -221,22 +221,22 @@ namespace qbat {
 		int status = 0;
 		bool energyUnits = sysfsDir.exists(m_Data.name + UI_CAPTION_NOW(UI_CAPTION_ENERGY));
 		
-		rate = readIntSysFile(sysfsDir.filePath(m_Data.name + "/current_now").toAscii().constData());
-		voltage = readIntSysFile(sysfsDir.filePath(m_Data.name + UI_CAPTION_NOW(UI_CAPTION_VOLTAGE)).toAscii().constData()) / 10000;
+		rate = readIntSysFile(sysfsDir.filePath(m_Data.name + "/current_now").toLatin1().constData());
+		voltage = readIntSysFile(sysfsDir.filePath(m_Data.name + UI_CAPTION_NOW(UI_CAPTION_VOLTAGE)).toLatin1().constData()) / 10000;
 		
 		char buffer[BUF_SIZE];
-		readStringFromFile(buffer, sysfsDir.filePath(m_Data.name + "/status").toAscii().constData());
+		readStringFromFile(buffer, sysfsDir.filePath(m_Data.name + "/status").toLatin1().constData());
 		status = toStatusInt(buffer);
 		
 		if (energyUnits) {
-			fullCapacity    = readIntSysFile(sysfsDir.filePath(m_Data.name + UI_CAPTION_FULL(UI_CAPTION_ENERGY)).toAscii().constData());
-			designCapacity  = readIntSysFile(sysfsDir.filePath(m_Data.name + UI_CAPTION_DESIGN(UI_CAPTION_ENERGY)).toAscii().constData());
-			currentCapacity = readIntSysFile(sysfsDir.filePath(m_Data.name + UI_CAPTION_NOW(UI_CAPTION_ENERGY)).toAscii().constData());
+			fullCapacity    = readIntSysFile(sysfsDir.filePath(m_Data.name + UI_CAPTION_FULL(UI_CAPTION_ENERGY)).toLatin1().constData());
+			designCapacity  = readIntSysFile(sysfsDir.filePath(m_Data.name + UI_CAPTION_DESIGN(UI_CAPTION_ENERGY)).toLatin1().constData());
+			currentCapacity = readIntSysFile(sysfsDir.filePath(m_Data.name + UI_CAPTION_NOW(UI_CAPTION_ENERGY)).toLatin1().constData());
 		}
 		else {
-			fullCapacity    = readIntSysFile(sysfsDir.filePath(m_Data.name + UI_CAPTION_FULL(UI_CAPTION_CHARGE)).toAscii().constData());
-			designCapacity  = readIntSysFile(sysfsDir.filePath(m_Data.name + UI_CAPTION_DESIGN(UI_CAPTION_CHARGE)).toAscii().constData());
-			currentCapacity = readIntSysFile(sysfsDir.filePath(m_Data.name + UI_CAPTION_NOW(UI_CAPTION_CHARGE)).toAscii().constData());
+			fullCapacity    = readIntSysFile(sysfsDir.filePath(m_Data.name + UI_CAPTION_FULL(UI_CAPTION_CHARGE)).toLatin1().constData());
+			designCapacity  = readIntSysFile(sysfsDir.filePath(m_Data.name + UI_CAPTION_DESIGN(UI_CAPTION_CHARGE)).toLatin1().constData());
+			currentCapacity = readIntSysFile(sysfsDir.filePath(m_Data.name + UI_CAPTION_NOW(UI_CAPTION_CHARGE)).toLatin1().constData());
 		}
 		
 		updateData(currentCapacity, fullCapacity, designCapacity, rate, voltage, status, energyUnits);

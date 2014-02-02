@@ -1,5 +1,6 @@
 #include <QtGui>
 #include <QTranslator>
+#include <QApplication>
 #include "powermanager.h"
 #include "constants.h"
 
