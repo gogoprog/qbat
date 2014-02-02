@@ -1,9 +1,0 @@
-# Hashes of file build rules.
-2e700969e07a25f3dd0eb36983595230 moc_batteryicon.cxx
-acc625775f18f458ecbfe0686a51d1f3 moc_common.cxx
-37059e6c3277abdab5faee648dcedb69 moc_constants.cxx
-e8bf4e34e3288b3705644ca291f729f5 moc_powermanager.cxx
-0934a67994461dae931053f2bd5a1e79 moc_qtimermessagebox.cxx
-5c53fb671a1a4d8ff83301a8e3c0e0a3 moc_settings.cxx
-df55916519bcf9caa002527a245ac031 qbat_de.qm
-088f5a0aacb142e9172af15eedb1d1bb ui_settingsdialog.h

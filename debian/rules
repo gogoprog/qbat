@@ -1,9 +1,0 @@
-#!/usr/bin/make -f
-  
-include /usr/share/cdbs/1/rules/debhelper.mk
-include /usr/share/cdbs/1/class/cmake.mk
-
-$(patsubst %,binary-install/%,$(DEB_PACKAGES)) :: binary-install/%:
-	$(if $(wildcard debian/$(cdbs_curpkg)/usr/share/applications/*), dh_desktop -p$(cdbs_curpkg) $(DEB_DH_DESKTOP_ARGS))
-
-DEB_INSTALL_MANPAGES_qbat=res/qbat.1
