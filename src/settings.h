@@ -9,6 +9,7 @@
 #define QBAT_SETTINGS_H
 
 #include <QDialog>
+#include <QButtonGroup>
 #include "ui_settingsdialog.h"
 #include "common.h"
 
