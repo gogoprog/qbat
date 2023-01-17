@@ -273,10 +273,16 @@ namespace qbat {
 			"Click ok to execute:\n%1").arg(m_Settings.criticalCommand) :
 			tr("WARNING: The attached battery(s) reached the critical mark.\n"
 			"Please make sure to save and shut down soon or provide another source of power.");
-		if (m_Settings.executeCommand && (!m_Settings.confirmCommand || (QTimerMessageBox::warning(NULL, msgTitle, msgText,
-			(m_Settings.confirmWithTimeout) ? m_Settings.timeoutValue : -1, QMessageBox::Ok | QMessageBox::Cancel))))
-			QProcess::startDetached(m_Settings.criticalCommand);
-		else {
+		if (m_Settings.executeCommand) {
+			bool approvedOrTimeout = true;
+			if (m_Settings.confirmCommand) {
+				const int timeoutArg = m_Settings.confirmWithTimeout ? m_Settings.timeoutValue : -1; // less than zero -> no timeout
+				QMessageBox::StandardButton msgBoxResult = QTimerMessageBox::warning(NULL, msgTitle, msgText, timeoutArg, QMessageBox::Ok | QMessageBox::Cancel);
+				approvedOrTimeout = msgBoxResult == QMessageBox::Ok; // OK is "pressed" on timeout too
+			}
+			if (approvedOrTimeout)
+				QProcess::startDetached(m_Settings.criticalCommand);
+		} else {
 			if (m_Settings.showBalloon)
 				m_BatteryIcons.begin().value()->showMessage(msgTitle, msgText, QSystemTrayIcon::Warning, 7000);
 			else
